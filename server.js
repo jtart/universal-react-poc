@@ -5,7 +5,7 @@ import { StaticRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import Helmet from 'react-helmet';
 
-import renderHTML from './renderers/toHtml';
+import renderHTML from './renderers/renderHTML';
 import routes from './routes';
 
 const server = express();
