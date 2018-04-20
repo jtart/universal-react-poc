@@ -2,10 +2,11 @@ const path = require('path');
 
 module.exports = {
   target: 'node',
-  entry: './server',
+  mode: 'development',
+  entry: './src/server/index',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'server.js',
+    filename: 'index.js',
   },
   module: {
     rules: [{

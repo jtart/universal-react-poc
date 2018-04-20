@@ -21,6 +21,6 @@
     "webpack-cli": "^2.0.14"
   },
   "scripts": {
-    "dev": "rm -rf ./dist && webpack && node ./dist/server.js"
+    "dev": "rm -rf ./dist && webpack && node ./dist/index.js"
   }
 }
