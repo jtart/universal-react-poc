@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 
 const Html = ({ children }) => {
   const head = Helmet.renderStatic();
+  const bodyInline = { __html: children };
 
   return (
     <html>
@@ -11,7 +12,8 @@ const Html = ({ children }) => {
         {head.title.toComponent()}
       </head>
       <body>
-        <div id="root">{children}</div>
+        <div id="root" dangerouslySetInnerHTML={bodyInline} />
+        <script src="/client.js" async></script>
       </body>
     </html>
   );

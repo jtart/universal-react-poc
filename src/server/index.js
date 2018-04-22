@@ -1,6 +1,6 @@
 import express from 'express';
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+import { renderToStaticMarkup, renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 
@@ -9,20 +9,21 @@ import routes from '../app/routes';
 
 const server = express();
 
+server.use(express.static('static'));
+
 server.get('*', (req, res) => {
   const staticContext = {};
 
-  const bodyInline = (
+  const body = renderToString(
     <StaticRouter location={req.url} context={staticContext}>
       {renderRoutes(routes)}
     </StaticRouter>
   );
+  const html = renderToStaticMarkup(<Html>{body}</Html>);
 
-  const renderedHTML = renderToString(<Html>{bodyInline}</Html>);
-
-  res.status(staticContext.statusCode || 200).send(renderedHTML);
+  res.status(staticContext.statusCode || 200).send(html);
 });
 
 server.listen(8080, err => {
-  console.info(`listening.`)
+  console.info(`listening on 8080.`)
 });
