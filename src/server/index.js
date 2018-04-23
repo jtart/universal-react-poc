@@ -1,27 +1,15 @@
 import express from 'express';
-import React from 'react';
-import { renderToStaticMarkup, renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
 
-import Html from '../app/containers/Html';
-import routes from '../app/routes';
+import renderHTML from './views/layouts/Html';
 
 const server = express();
 
 server.use(express.static('static'));
 
 server.get('*', (req, res) => {
-  const staticContext = {};
+  const { context, html } = renderHTML(req.url);
 
-  const body = renderToString(
-    <StaticRouter location={req.url} context={staticContext}>
-      {renderRoutes(routes)}
-    </StaticRouter>
-  );
-  const html = renderToStaticMarkup(<Html>{body}</Html>);
-
-  res.status(staticContext.statusCode || 200).send(html);
+  res.status(200).send(html);
 });
 
 server.listen(8080, err => {
