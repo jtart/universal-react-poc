@@ -1,10 +1,12 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import Helmet from 'react-helmet';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 
-import createRouter from '../components/Router';
+import Router from '../components/Router';
 
-const Html = ({ head, children }) => (
+const Html = ({ head, children }: { head: Helmet, children: string }): React.Node => (
   <html>
     <head>
       <meta charSet="utf-8" />
@@ -17,9 +19,10 @@ const Html = ({ head, children }) => (
   </html>
 );
 
-const renderHtml = (url) => {
-  const { StaticRouter, context } = createRouter(url);
-  const renderedStaticRouter = renderToString(StaticRouter);
+function renderHTML(url: String): { html: string, context: Object } {
+  const context = {}
+
+  const renderedStaticRouter = renderToString(<Router url={url} context={context} />);
   const head = Helmet.renderStatic();
   const html = renderToStaticMarkup(<Html head={head}>{renderedStaticRouter}</Html>);
 
@@ -29,4 +32,5 @@ const renderHtml = (url) => {
   })
 }
 
-export default renderHtml;
+
+export default renderHTML;

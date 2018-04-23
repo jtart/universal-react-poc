@@ -1,0 +1,13 @@
+[ignore]
+.*/dist/.*
+.*/static/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

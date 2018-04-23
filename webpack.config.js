@@ -1,7 +1,6 @@
 const path = require('path');
 
 const client = {
-  target: 'node',
   mode: 'development',
   entry: './src/client/index',
   output: {

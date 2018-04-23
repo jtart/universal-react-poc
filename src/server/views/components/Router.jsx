@@ -1,6 +1,8 @@
+// @flow
+
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
-import StaticRouter from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom';
 
 import routes from '../../../app/routes';
 
@@ -10,13 +12,4 @@ const Router = ({ url, context }) => (
   </StaticRouter>
 );
 
-const createRouter = (url, context = {}) => {
-  const router = <Router url={url} context={context} />;
-
-  return({
-    router,
-    context
-  })
-};
-
-export default createRouter;
+export default Router;

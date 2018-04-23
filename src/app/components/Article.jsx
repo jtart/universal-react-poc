@@ -1,7 +1,9 @@
-import React from 'react';
+// @flow
+
+import * as React from 'react';
 import Helmet from 'react-helmet';
 
-const Article = () => (
+const Article = (): React.Node => (
   <div>
     <Helmet title="Article!" />
     <h1>Article content :)</h1>

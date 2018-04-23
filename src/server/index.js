@@ -1,3 +1,5 @@
+// @flow
+
 import express from 'express';
 
 import renderHTML from './views/layouts/Html';
@@ -6,8 +8,10 @@ const server = express();
 
 server.use(express.static('static'));
 
+server.get('/favicon.ico', () => null);
+
 server.get('*', (req, res) => {
-  const { context, html } = renderHTML(req.url);
+  const { html } = renderHTML(req.url);
 
   res.status(200).send(html);
 });
