@@ -7,5 +7,5 @@ export default [
     component: Article,
     exact: true,
     path: '/',
-  }
+  },
 ];

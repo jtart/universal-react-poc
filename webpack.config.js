@@ -8,15 +8,17 @@ const client = {
     filename: 'client.js',
   },
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      use: 'babel-loader',
-      exclude: /node_modules/,
-    }],
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-  }
+  },
 };
 
 const server = {
@@ -28,16 +30,17 @@ const server = {
     filename: 'index.js',
   },
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      use: 'babel-loader',
-      exclude: /node_modules/,
-    }],
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-  }
+  },
 };
-
 
 module.exports = [client, server];

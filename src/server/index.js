@@ -2,7 +2,7 @@
 
 import express from 'express';
 
-import renderHTML from './views/layouts/Html';
+import renderHTML from './views/renderers';
 
 const server = express();
 
@@ -16,6 +16,6 @@ server.get('*', (req, res) => {
   res.status(200).send(html);
 });
 
-server.listen(8080, err => {
-  console.info(`listening on 8080.`)
+server.listen(8080, () => {
+  console.info(`listening on 8080.`);
 });

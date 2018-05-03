@@ -8,6 +8,6 @@ const Article = (): React.Node => (
     <Helmet title="Article!" />
     <h1>Article content :)</h1>
   </div>
-)
+);
 
 export default Article;
