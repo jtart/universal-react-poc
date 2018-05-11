@@ -17,7 +17,7 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
-    "razzle": "^2.0.0-alpha.11",
+    "razzle": "^2.0.0-alpha.12",
     "babel-eslint": "^8.2.3",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
