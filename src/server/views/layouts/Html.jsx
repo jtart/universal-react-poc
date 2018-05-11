@@ -4,6 +4,10 @@ import * as React from 'react';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
+const scripts = Object.keys(assets).map(key => (
+  <script key={key} src={`${assets[key].js}`} defer crossorigin />
+));
+
 const Html = ({
   head,
   children,
@@ -18,7 +22,7 @@ const Html = ({
     </head>
     <body>
       <div id="root" dangerouslySetInnerHTML={{ __html: children }} />
-      <script src={`${assets.client.js}`} defer crossorigin />
+      {scripts}
     </body>
   </html>
 );
