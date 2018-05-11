@@ -8,7 +8,7 @@ const Article = (): React.Node => (
   <div>
     <Helmet title="Article!" />
     <h1>Article content :)</h1>
-    <Link to="/">Another article</Link>
+    <Link to="/test">Test!</Link>
   </div>
 );
 
