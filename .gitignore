@@ -1,4 +1,12 @@
+logs
+*.log
+npm-debug.log*
+.DS_Store
+
+coverage
 node_modules
-dist
-**/.DS_Store
-static
+build
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

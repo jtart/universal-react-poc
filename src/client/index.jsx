@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import { hydrate } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,4 +9,8 @@ const rootElement = document.getElementById('root');
 
 if (rootElement !== null) {
   hydrate(Router, rootElement);
+}
+
+if (module.hot) {
+  module.hot.accept();
 }

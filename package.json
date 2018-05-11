@@ -1,11 +1,16 @@
 {
-  "name": "universal-react-poc",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "my-razzle-app",
+  "version": "2.0.0-alpha.8",
   "license": "MIT",
+  "scripts": {
+    "start": "razzle start",
+    "build": "razzle build",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "NODE_ENV=production node build/server.js"
+  },
   "dependencies": {
-    "eslint-plugin-flowtype": "^2.46.3",
     "express": "^4.16.3",
+    "razzle": "^2.0.0-alpha.12",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
@@ -13,25 +18,12 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-flowtype": "^2.46.3",
     "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.7.0",
-    "flow-bin": "^0.70.0",
-    "webpack": "^4.6.0",
-    "webpack-cli": "^2.0.14"
-  },
-  "scripts": {
-    "dev": "rm -rf ./dist && webpack && node ./dist/index.js"
+    "flow-bin": "^0.72.0",
+    "prettier": "^1.12.1"
   }
 }

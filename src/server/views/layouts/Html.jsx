@@ -2,6 +2,8 @@
 
 import * as React from 'react';
 
+const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
+
 const Html = ({
   head,
   children,
@@ -16,7 +18,7 @@ const Html = ({
     </head>
     <body>
       <div id="root" dangerouslySetInnerHTML={{ __html: children }} />
-      <script src="/client.js" async />
+      <script src={`${assets.client.js}`} defer crossorigin />
     </body>
   </html>
 );
