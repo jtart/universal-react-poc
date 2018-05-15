@@ -1,10 +1,8 @@
-// @flow
-
-import * as React from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 
-const Test = (): React.Node => (
+const Test = () => (
   <div>
     <Helmet title="Test!" />
     <h1>Test header</h1>

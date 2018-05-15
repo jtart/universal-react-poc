@@ -1,5 +1,3 @@
-// @flow
-
 import Article from './components/Article';
 import Test from './components/Test';
 

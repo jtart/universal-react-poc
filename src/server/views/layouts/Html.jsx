@@ -1,6 +1,4 @@
-// @flow
-
-import * as React from 'react';
+import React from 'react';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
@@ -8,13 +6,7 @@ const scripts = Object.keys(assets).map(key => (
   <script key={key} src={`${assets[key].js}`} defer />
 ));
 
-const Html = ({
-  head,
-  children,
-}: {
-  head: Object,
-  children: string,
-}): React.Node => (
+const Html = ({ head, children }) => (
   <html lang="en">
     <head>
       <meta charSet="utf-8" />

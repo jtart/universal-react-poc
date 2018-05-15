@@ -1,10 +1,8 @@
-// @flow
-
-import * as React from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 
-const Article = (): React.Node => (
+const Article = () => (
   <div>
     <Helmet title="Article!" />
     <h1>Article content :)</h1>

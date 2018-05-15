@@ -1,13 +1,11 @@
-// @flow
-
-import * as React from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 
 import Router from '../components/Router';
 import Html from '../layouts/Html';
 
-function renderHTML(url: String): { html: string, context: Object } {
+function renderHTML(url) {
   const context = {};
 
   const renderedStaticRouter = renderToString(
