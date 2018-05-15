@@ -1,14 +1,12 @@
-// @flow
+import React from 'react';
 
-import * as React from 'react';
+const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
-const Html = ({
-  head,
-  children,
-}: {
-  head: Object,
-  children: string,
-}): React.Node => (
+const scripts = Object.keys(assets).map(key => (
+  <script key={key} src={`${assets[key].js}`} defer />
+));
+
+const Html = ({ head, children }) => (
   <html lang="en">
     <head>
       <meta charSet="utf-8" />
@@ -16,7 +14,7 @@ const Html = ({
     </head>
     <body>
       <div id="root" dangerouslySetInnerHTML={{ __html: children }} />
-      <script src="/client.js" async />
+      {scripts}
     </body>
   </html>
 );
