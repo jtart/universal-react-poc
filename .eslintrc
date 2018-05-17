@@ -1,13 +1,7 @@
 {
   "parser": "babel-eslint",
-  "plugins": [
-    "prettier",
-    "flowtype"
-  ],
-  "extends": [
-    "plugin:prettier/recommended",
-    "plugin:flowtype/recommended"
-  ],
+  "plugins": ["prettier"],
+  "extends": ["plugin:prettier/recommended"],
   "rules": {
     "import/no-extraneous-dependencies": 0
   }
